@@ -70,3 +70,66 @@ signupButton.addEventListener("click", () => {
   signup.prepend(heading);
   signup.classList.add("show");
 });
+
+// Book section
+
+const bookSection = document.querySelector(".bookSection");
+
+const books = [
+  {
+    imgSrc: "./book1.jpg",
+    title: "Advance Data Structures and Algorithm Book",
+    description: "Mainly use for high level skills in DSA",
+  },
+  {
+    imgSrc: "./book1.jpg",
+    title: "Advance Data Structures and Algorithm Book",
+    description: "Mainly use for high level skills in DSA",
+  },
+  {
+    imgSrc: "./book1.jpg",
+    title: "Advance Data Structures and Algorithm Book",
+    description: "Mainly use for high level skills in DSA",
+  },
+  {
+    imgSrc: "./book1.jpg",
+    title: "Advance Data Structures and Algorithm Book",
+    description: "Mainly use for high level skills in DSA",
+  },
+  {
+    imgSrc: "./book1.jpg",
+    title: "Advance Data Structures and Algorithm Book",
+    description: "Mainly use for high level skills in DSA",
+  },
+  {
+    imgSrc: "./book1.jpg",
+    title: "Advance Data Structures and Algorithm Book",
+    description: "Mainly use for high level skills in DSA",
+  },
+];
+
+books.forEach((book) => {
+  const article = document.createElement("article");
+  article.classList.add("eachBook");
+
+  const bookElements = document.createElement("div");
+  bookElements.classList.add("bookElements");
+
+  const img = document.createElement("img");
+  img.src = book.imgSrc;
+  img.width = 200;
+  img.height = 300;
+
+  const title = document.createElement("h5");
+  title.textContent = book.title;
+
+  const description = document.createElement("p");
+  description.textContent = book.description;
+
+  bookElements.appendChild(img);
+  bookElements.appendChild(title);
+  bookElements.appendChild(description);
+  article.appendChild(bookElements);
+
+  bookSection.appendChild(article);
+});
