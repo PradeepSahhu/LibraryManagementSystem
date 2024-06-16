@@ -6,6 +6,11 @@
 
 const userLoginData = { "official.pradeepsahu@gmail.com": "123" };
 
+// local variables
+const submitButton = document.querySelector("#submitButton");
+const heading = document.querySelector(".headingText");
+const removeButton = document.querySelector("#removeButton");
+
 function registerUser(mailId, password) {
   if (!userLoginData[mailId] && mailId !== "") {
     userLoginData[mailId] = password;
@@ -28,7 +33,6 @@ function deleteUser(maidId) {
   console.log(userLoginData);
 }
 
-const submitButton = document.querySelector("#submitButton");
 submitButton.addEventListener("click", () => {
   console.log("is this working");
 
@@ -38,8 +42,6 @@ submitButton.addEventListener("click", () => {
   console.log(mailId + " and " + password);
   registerUser(mailId, password);
 });
-
-const removeButton = document.querySelector("#removeButton");
 
 removeButton.addEventListener("click", () => {
   const mailId = document.getElementsByName("mail")[0].value;
@@ -53,15 +55,19 @@ const loginButton = document.querySelector("#loginButton");
 const login = document.querySelector("#login");
 
 loginButton.addEventListener("click", () => {
-  const heading = document.createElement("h1");
+  signup.classList.remove("show");
+
   heading.textContent = "Login User";
   login.prepend(heading);
   login.classList.add("show");
 });
+
+const signup = document.querySelector("#signup");
 const signupButton = document.querySelector("#signupButton");
 signupButton.addEventListener("click", () => {
-  const heading = document.createElement("h1");
+  login.classList.remove("show");
+
   heading.textContent = "signup User";
-  login.prepend(heading);
-  login.classList.add("show");
+  signup.prepend(heading);
+  signup.classList.add("show");
 });

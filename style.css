@@ -15,11 +15,19 @@ button {
 #login {
   overflow: hidden;
   width: 100%;
-  border-radius: 1rem;
   max-height: 0px;
   transition: max-height 1s;
 }
 
 #login.show {
+  max-height: 200px;
+}
+#signup {
+  overflow: hidden;
+  width: 100%;
+  max-height: 0px;
+  transition: max-height 1s;
+}
+#signup.show {
   max-height: 200px;
 }
