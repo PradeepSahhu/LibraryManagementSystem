@@ -14,7 +14,6 @@ const removeButton = document.querySelector("#removeButton");
 function registerUser(mailId, password) {
   if (!userLoginData[mailId] && mailId !== "") {
     userLoginData[mailId] = password;
-    login.removeChild(login.firstElementChild);
     login.classList.remove("show");
   } else {
     alert("Can't register user");
